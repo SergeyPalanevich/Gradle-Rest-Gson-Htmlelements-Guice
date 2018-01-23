@@ -1,0 +1,34 @@
+group 'com.epam.domain'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = "com.epam.core.Runner"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://dl.bintray.com/epam/reportportal'
+    }
+}
+
+dependencies {
+    compile 'org.testng:testng:6.13.1'
+    compile 'io.rest-assured:rest-assured:3.0.6'
+    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.google.inject:guice:4.1.0'
+    compile 'ru.yandex.qatools.htmlelements:htmlelements-java:1.18'
+    compile 'io.rest-assured:json-path:3.0.6'
+    compile 'com.epam.reportportal:agent-java-testng:3.0.6'
+    compile 'com.epam.reportportal:logger-java-log4j:3.0.2'
+}
+
+test {
+    useTestNG()
+}
+
+
